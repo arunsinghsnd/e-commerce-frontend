@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom';
+import { signout,  isAutheticated } from '../auth/helper';
+
 
 
 const currentTab = (history, path) =>{
@@ -44,11 +46,20 @@ const Menu = ({history}) =>(
                     Sign In
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link style={currentTab(history, "/signout")} className="nav-link" to="/signout">
-                    Signout
-                </Link>
-            </li>
+            {isAutheticated() && (
+                <li>
+                    <span
+                    className="nav-link text-warning"
+                    onClick={() =>{
+                        signout(() =>{
+                            history.push("/")
+                        })
+                    }}>
+                        Signout
+                    </span>
+                </li>
+            )}
+            
         </ul>
     </div>
 )
