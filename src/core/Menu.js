@@ -28,7 +28,7 @@ const Menu = ({history}) =>(
             </li>
             <li className="nav-item">
                 <Link style={currentTab(history, "/user/dashbord")} className="nav-link" to="/user/dashbord">
-                    Dashboard
+                  U. Dashboard
                 </Link>
             </li>
             <li className="nav-item">
