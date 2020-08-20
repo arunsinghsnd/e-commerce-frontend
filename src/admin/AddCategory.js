@@ -3,9 +3,15 @@ import Base from '../core/Base';
 
 const  AddCategory = () => {
     return (
-        <div>
-            <h1>Create a new category from here</h1>
+        <Base title="Create a category here" description="Addd a new category for new tshirts"
+        className="container bg-info p-4"
+        >
+        <div className="row bg-white rounded">
+            <div className="col-md-8 offset-md-2">
+                <h1>hello</h1>
+            </div>
         </div>
+        </Base>
     );
 };
 
