@@ -21,21 +21,27 @@ const Menu = ({history}) =>(
                     Home
                 </Link>
             </li>
+           
             <li className="nav-item">
                 <Link style={currentTab(history, "/cart")}  className="nav-link" to="/cart">
                     Cart
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link style={currentTab(history, "/user/dashbord")} className="nav-link" to="/user/dashbord">
-                  U. Dashboard
+            {isAutheticated() && isAutheticated().user.role === 0 && (
+                <li className="nav-item">
+                <Link style={currentTab(history, "/user/dashboard")} className="nav-link" to="/user/dashboard">
+                U. Dashboard
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link style={currentTab(history, "/admin/dashboard")} className="nav-link" to="/admin/dashbord">
+                )}
+            {!isAutheticated() && isAutheticated().user.role === 1 &&(
+                <li className="nav-item">
+                <Link style={currentTab(history, "/admin/dashboard")} className="nav-link" to="/admin/dashboard">
                     A. Dashboard
                 </Link>
             </li>
+            )}
+           
             {!isAutheticated() &&(
                 <Fragment>
             <li className="nav-item">
