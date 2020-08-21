@@ -50,3 +50,15 @@ export const createaProduct = (userId, token, product) => {
       })
       .catch(err => console.log(err));
   };
+
+
+  //get all products
+export const getProducts = () => {
+    return fetch(`${API}/products`, {
+      method: "GET"
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
