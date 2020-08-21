@@ -30,3 +30,23 @@ export const getCategories = () => {
       })
       .catch(err => console.log(err));
   };
+
+
+
+//products calls
+
+//create a product
+export const createaProduct = (userId, token, product) => {
+    return fetch(`${API}/product/create/${userId}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: product
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
