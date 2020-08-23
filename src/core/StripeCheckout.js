@@ -56,6 +56,8 @@ const StripeCheckout = ({
         token={makePayment}
         amount={getFinalAmount() * 100}
         name="Buy Tshirts"
+        shippingAddress
+        billingAddress
       >
         <button className="btn btn-success">Pay with stripe</button>
       </StripeCheckoutButton>
